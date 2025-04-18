@@ -617,7 +617,7 @@ const costs: ModelRow[] = [
     cost: {
       prompt_token: 0.0000001,
       completion_token: 0.0000004,
-      prompt_cache_read_token: 0.000000025,
+      prompt_cache_read_token: 0.00000003,
     },
     showInPlayground: true,
   },
@@ -629,7 +629,7 @@ const costs: ModelRow[] = [
     cost: {
       prompt_token: 0.0000001,
       completion_token: 0.0000004,
-      prompt_cache_read_token: 0.000000025,
+      prompt_cache_read_token: 0.00000003,
     },
     showInPlayground: true,
   },
@@ -658,6 +658,17 @@ const costs: ModelRow[] = [
       completion_audio_token: 0.00002,
     },
   },
+  {
+    model: {
+      operator: "includes",
+      value: "o4-mini",
+    },
+    cost: {
+      prompt_token: 0.0000011,
+      completion_token: 0.0000044,
+      prompt_cache_read_token: 0.00000028,
+    }
+  }
 ];
 
 const modelDetails: ModelDetailsMap = {
@@ -1140,6 +1151,26 @@ const modelDetails: ModelDetailsMap = {
       strengths: ["Can process images"],
       weaknesses: ["More expensive than GPT-3.5 Turbo"],
       recommendations: ["Use for tasks that require image processing"],
+    },
+  },
+  "o4-mini": {
+    matches: ["o4-mini", "o4-mini-2025-04-16"],
+    searchTerms: ["o4 mini", "o4-mini", "chat gpt o4 mini", "chat o4 mini"],
+    info: {
+      maxTokens: 200000,
+      releaseDate: "2025-04-16",
+      description:
+        "o4-mini is a small o-series model. It's optimized for fast, effective reasoning with exceptionally efficient performance in coding and visual tasks.",
+      tradeOffs: ["More expensive than 4.1 models.", "Similar benchmark performance to o3 at much lower costs."],
+      benchmarks: {
+        gpqa: 0.814,
+        mathvista: 0.843,
+        multichallenge: 0.429,
+      },
+      capabilities: [],
+      strengths: [],
+      weaknesses: [],
+      recommendations: [],
     },
   },
 };
